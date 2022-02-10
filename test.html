@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Answers Search UI TEST</title>
+  <link rel="stylesheet" type="text/css" href="https://assets.sitescdn.net/answers/answers.css">
+</head>
+<body>
+
+
+  <div class="answers-layout">
+    <div class="search-bar"></div>
+    <div class="spell-check"></div>
+    <div class="direct-answer"></div>
+    <div class="universal-results"></div>
+    <div class="location-bias"></div>
+  </div>
+</body>
+<script src="https://assets.sitescdn.net/answers/answers.min.js" onload="ANSWERS.domReady(initAnswers)" defer async></script>
+<script>
+  function initAnswers() {
+    ANSWERS.init({
+      apiKey: '93d9f7ab18e8e5df4688a90cebeb38b8',
+      experienceKey: 'answers',
+      businessId:'3697674',
+      experienceVersion: "PRODUCTION",
+      onReady: function () {
+          // init components
+          this.addComponent("SearchBar", {
+            container: ".search-bar"
+          });
+          this.addComponent("SpellCheck", {
+            container: ".spell-check"
+          });
+          this.addComponent("DirectAnswer", {
+            container: ".direct-answer"
+          });
+          this.addComponent("UniversalResults", {
+            container: ".universal-results"
+          });
+          this.addComponent("LocationBias", {
+            container: ".location-bias"
+          });
+        }
+    })
+  }
+</script>
+</html>
